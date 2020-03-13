@@ -56,4 +56,18 @@ public class Equipo
 
     //End GetterSetterExtension Source Code
 //!
+
+    //Start GetterSetterExtension Source Code
+    /**GET Method Propertie corredores*/
+    public java.util.List<Corredor> getCorredores(){
+        return this.corredores;
+    }//end method getCorredores
+
+    /**SET Method Propertie corredores*/
+    public void setCorredores(java.util.List<Corredor> corredores){
+        this.corredores = corredores;
+    }//end method setCorredores
+
+    //End GetterSetterExtension Source Code
+//!
 }

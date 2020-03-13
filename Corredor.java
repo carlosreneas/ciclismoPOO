@@ -101,4 +101,8 @@ public class Corredor
 
     //End GetterSetterExtension Source Code
 //!
+
+    //Start GetterSetterExtension Source Code
+    //End GetterSetterExtension Source Code
+//!
 }

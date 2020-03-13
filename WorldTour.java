@@ -44,32 +44,67 @@ public class WorldTour
         printEquipos();
         
         Carrera ca1 = new Carrera();
-        ca1.setDescripcion("Tour de Francia");
+        ca1.setDescripcion("Le Tour");
         ca1.setPais(Pais.FRANCIA);
         ca1.setFechaInicio(Util.toDate("01/04/2020"));
         ca1.setFechaFin(Util.toDate("22/04/2020"));
-        
         carreras.add(ca1);
         
+        Carrera ca2 = new Carrera();
+        ca2.setDescripcion("La Vuelta");
+        ca2.setPais(Pais.ESPANIA);
+        ca2.setFechaInicio(Util.toDate("01/05/2020"));
+        ca2.setFechaFin(Util.toDate("22/05/2020"));
+        
+        carreras.add(ca2);
+        
+        carreras.add(new Carrera("El Giro", Util.toDate("01/07/2020"), 
+            Util.toDate("22/07/2020"), Pais.ITALIA));
         
         printCarreras();
         
+        Corredor co1 = new Corredor();
+        co1.setNombre("Nairo Quintana");
+        co1.setFechaNacimiento(Util.toDate("01/01/1990"));
+        
+        for(Equipo e: this.equipos) {
+            if(e.getNombre().contentEquals("Arkea")) {
+                co1.setEquipo(e);
+                e.getCorredores().add(co1);
+            }
+        }
+        
+        corredores.add(co1);
+        
+        Corredor co2 = new Corredor();
+        co2.setNombre("Egan Bernal");
+        co2.setFechaNacimiento(Util.toDate("01/01/1999"));
+        
+        for(Equipo e: this.equipos) {
+            if(e.getNombre().contentEquals("Ineos")) {
+                co2.setEquipo(e);
+                e.getCorredores().add(co2);
+            }
+        }
+        
+        corredores.add(co2);
         
         printCorredores();
         
+        printEquipos();
         
         
     }
     
     public void printEquipos() {
         for(Equipo e: this.equipos) {
-            System.out.println(e.getNombre());
+            System.out.println(e.getNombre() + " No " + e.getCorredores().size());
         }
     }
     
     public void printCorredores() {
         for(Corredor c: this.corredores) {
-            System.out.println(c.getNombre());
+            System.out.println("Nombre: " + c.getNombre() + " - Equipo: " + c.getEquipo().getNombre());
         }
     }
     

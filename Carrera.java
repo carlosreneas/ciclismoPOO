@@ -26,6 +26,15 @@ public class Carrera
         // initialise instance variables
         posiciones = new ArrayList<Posicion>();
     }
+    
+    
+    public Carrera(String descripcion, Date fechaInicio, Date fechaFin, Pais pais) {
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.pais = pais;
+        posiciones = new ArrayList<Posicion>();
+    }
 
     /**
      * An example of a method - replace this comment with your own

@@ -13,8 +13,8 @@ public class Util
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  date  corresponde a la fecha en String a convertir
+     * @return    la fecha correspondiente a 
      */
     public static Date toDate(String date)
     {
