@@ -95,6 +95,45 @@ public class WorldTour
         printEquipos();
         
         
+        /** Egan en el Tour */ 
+        Posicion p1 = new Posicion();
+        p1.setPosicion(1);
+        
+        Carrera car1 = findCarrera("Le Tour");
+        p1.setCarrera(car1);
+        car1.getPosiciones().add(p1);
+        
+        Corredor cor1 = findCorredor("Egan Bernal");
+        p1.setCorredor(cor1);
+        cor1.getPosiciones().add(p1);
+        
+        /** Nairo en el Tour */ 
+        p1 = new Posicion();
+        p1.setPosicion(4);
+        
+        car1 = findCarrera("Le Tour");
+        p1.setCarrera(car1);
+        car1.getPosiciones().add(p1);
+        
+        cor1 = findCorredor("Nairo Quintana");
+        p1.setCorredor(cor1);
+        cor1.getPosiciones().add(p1);
+        
+        /** Egan en el Giro */ 
+        p1 = new Posicion();
+        p1.setPosicion(5);
+        
+        car1 = findCarrera("El Giro");
+        p1.setCarrera(car1);
+        car1.getPosiciones().add(p1);
+        
+        cor1 = findCorredor("Egan Bernal");
+        p1.setCorredor(cor1);
+        cor1.getPosiciones().add(p1);
+        
+        car1 = findCarrera("Le Tour");
+        printPosiciones(car1);
+        
     }
     
     public void printEquipos() {
@@ -129,10 +168,37 @@ public class WorldTour
         }
     }
     
+    
+    public Corredor findCorredor(String nombre) {
+        for(Corredor pepito: this.corredores) {
+            if(pepito.getNombre().contentEquals(nombre)) {
+                return pepito;
+            }
+        }
+        return null;
+    }
+    
     public void printCarreras() {
         for(Carrera c: this.carreras) {
             System.out.println(c.getDescripcion());
         }
+    }
+    
+    
+    public void printPosiciones(Carrera car) {
+        List<Posicion> pos = car.getPosiciones();
+        for(Posicion p: pos) {
+            System.out.println(p.getPosicion() + " Corredor " + p.getCorredor().getNombre() + " Equipo " + p.getCorredor().getEquipo().getNombre() );
+        }
+    }
+    
+    public Carrera findCarrera(String descripcion) {
+        for(Carrera c: this.carreras) {
+            if(c.getDescripcion().contentEquals(descripcion)) {
+                return c;
+            }
+        }
+        return null;
     }
     
     
