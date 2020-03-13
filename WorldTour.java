@@ -66,28 +66,29 @@ public class WorldTour
         Corredor co1 = new Corredor();
         co1.setNombre("Nairo Quintana");
         co1.setFechaNacimiento(Util.toDate("01/01/1990"));
-        
-        for(Equipo e: this.equipos) {
-            if(e.getNombre().contentEquals("Arkea")) {
-                co1.setEquipo(e);
-                e.getCorredores().add(co1);
-            }
-        }
-        
+        Equipo e1 = findEquipo("Arkea");
+        co1.setEquipo(e1);
+        e1.getCorredores().add(co1);
         corredores.add(co1);
         
         Corredor co2 = new Corredor();
         co2.setNombre("Egan Bernal");
         co2.setFechaNacimiento(Util.toDate("01/01/1999"));
-        
         for(Equipo e: this.equipos) {
             if(e.getNombre().contentEquals("Ineos")) {
                 co2.setEquipo(e);
                 e.getCorredores().add(co2);
             }
         }
-        
         corredores.add(co2);
+        
+        
+        Corredor co3 = new Corredor();
+        co3.setNombre("Cristopher Froome");
+        co3.setFechaNacimiento(Util.toDate("01/01/1992"));
+        asignarEquipo("Ineos", co3);
+        corredores.add(co3);
+        
         
         printCorredores();
         
@@ -99,6 +100,26 @@ public class WorldTour
     public void printEquipos() {
         for(Equipo e: this.equipos) {
             System.out.println(e.getNombre() + " No " + e.getCorredores().size());
+        }
+    }
+    
+    public Equipo findEquipo(String nombre) {
+        for(Equipo e: this.equipos) {
+            if(e.getNombre().contentEquals(nombre)) {
+                return e;
+                //co1.setEquipo(e);
+                //e.getCorredores().add(co1);
+            }
+        }
+        return null;
+    }
+    
+    public void asignarEquipo(String nombre, Corredor co) {
+        for(Equipo e: this.equipos) {
+            if(e.getNombre().contentEquals(nombre)) {
+                co.setEquipo(e);
+                e.getCorredores().add(co);
+            }
         }
     }
     
