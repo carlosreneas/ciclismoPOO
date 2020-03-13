@@ -2,21 +2,26 @@
 /**
  * Write a description of class Equipo here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author CARLOS RENE ANGARITA SANGUINO
+ * @version 0.0.1
  */
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Equipo
 {
     // instance variables - replace the example below with your own
     private String nombre;
     private Pais pais;
+    private List<Corredor> corredores;
 
     /**
      * Constructor for objects of class Equipo
      */
     public Equipo()
     {
-
+        this.corredores = new ArrayList<Corredor>();
     }
 
 

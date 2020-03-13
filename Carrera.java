@@ -6,6 +6,8 @@
  * @version 0.0.1
  */
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Carrera
 {
@@ -14,6 +16,7 @@ public class Carrera
     private Date fechaInicio;
     private Date fechaFin;
     private Pais pais;
+    private List<Posicion> posiciones;
 
     /**
      * Constructor for objects of class Carrera
@@ -21,6 +24,7 @@ public class Carrera
     public Carrera()
     {
         // initialise instance variables
+        posiciones = new ArrayList<Posicion>();
     }
 
     /**
@@ -79,6 +83,20 @@ public class Carrera
     public void setPais(Pais pais){
         this.pais = pais;
     }//end method setPais
+
+    //End GetterSetterExtension Source Code
+//!
+
+    //Start GetterSetterExtension Source Code
+    /**GET Method Propertie posiciones*/
+    public java.util.List<Posicion> getPosiciones(){
+        return this.posiciones;
+    }//end method getPosiciones
+
+    /**SET Method Propertie posiciones*/
+    public void setPosiciones(java.util.List<Posicion> posiciones){
+        this.posiciones = posiciones;
+    }//end method setPosiciones
 
     //End GetterSetterExtension Source Code
 //!

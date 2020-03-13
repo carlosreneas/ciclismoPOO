@@ -7,6 +7,8 @@
  */
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Corredor
 {
@@ -15,13 +17,15 @@ public class Corredor
     private Date fechaNacimiento;
     private Float estatura;
     private Float peso;
+    private Equipo equipo;
+    private List<Posicion> posiciones;
 
     /**
      * Constructor for objects of class Corredor
      */
     public Corredor()
     {
-
+        posiciones = new ArrayList<Posicion>();
     }
 
     
@@ -66,6 +70,34 @@ public class Corredor
     public void setPeso(Float peso){
         this.peso = peso;
     }//end method setPeso
+
+    //End GetterSetterExtension Source Code
+//!
+
+    //Start GetterSetterExtension Source Code
+    /**GET Method Propertie equipo*/
+    public Equipo getEquipo(){
+        return this.equipo;
+    }//end method getEquipo
+
+    /**SET Method Propertie equipo*/
+    public void setEquipo(Equipo equipo){
+        this.equipo = equipo;
+    }//end method setEquipo
+
+    //End GetterSetterExtension Source Code
+//!
+
+    //Start GetterSetterExtension Source Code
+    /**GET Method Propertie posiciones*/
+    public java.util.List<Posicion> getPosiciones(){
+        return this.posiciones;
+    }//end method getPosiciones
+
+    /**SET Method Propertie posiciones*/
+    public void setPosiciones(java.util.List<Posicion> posiciones){
+        this.posiciones = posiciones;
+    }//end method setPosiciones
 
     //End GetterSetterExtension Source Code
 //!
