@@ -23,6 +23,14 @@ public class Equipo
     {
         this.corredores = new ArrayList<Corredor>();
     }
+    
+    
+    public Equipo(String nombre, Pais pais)
+    {
+        this.nombre = nombre;
+        this.pais = pais;
+        this.corredores = new ArrayList<Corredor>();
+    }
 
 
     //Start GetterSetterExtension Source Code
